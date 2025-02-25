@@ -30,13 +30,11 @@
             object-fit: cover;
             border: 3px solid #007bff;
         }
-        .btn-danger {
-            background: #dc3545;
+        .btn-custom {
+            width: 100%;
+            margin-top: 10px;
             border-radius: 8px;
             transition: all 0.3s ease;
-        }
-        .btn-danger:hover {
-            background: #bb2d3b;
         }
     </style>
 </head>
@@ -49,7 +47,17 @@
             <p><strong>Username:</strong> {{ user.username }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
             <p><strong>Address:</strong> {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}</p>
-            <a href="{% url 'logout' %}" class="btn btn-danger w-100 mt-3">Logout</a>
+
+            <!-- View My Blogs -->
+            <a href="{% url 'doctor_blogs' %}" class="btn btn-success btn-custom">My Blogs</a>
+
+            <!-- Create New Blog -->
+            <a href="{% url 'create_blog' %}" class="btn btn-primary btn-custom">Create Blog</a>
+
+            <!-- View All Published Blogs (Same as Patients) -->
+            <a href="{% url 'patient_blogs' %}" class="btn btn-info btn-custom">View All Blogs</a>
+
+            <a href="{% url 'logout' %}" class="btn btn-danger btn-custom">Logout</a>
         </div>
     </div>
 </body>
